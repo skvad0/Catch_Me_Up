@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+Catch_Me_Up/
+*.egg-info/
+dist/
+build/
+tempCodeRunnerFile.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Project specific
+*.epub
+*_chunks.jsonl
+chroma_db/
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
