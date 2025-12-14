@@ -1,6 +1,6 @@
 # Catch Me Up - Book Q&A System
 
-A RAG (Retrieval-Augmented Generation) based command-line tool that lets you ask questions about EPUB books and get contextual summaries.
+A RAG (Retrieval-Augmented Generation) based CLI tool that lets you ask questions about EPUB books and get contextual summaries.
 
 ## Requirements
 
@@ -11,7 +11,7 @@ A RAG (Retrieval-Augmented Generation) based command-line tool that lets you ask
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/catch-me-up.git
+git clone https://github.com/skvad0/Catch_Me_Up.git
 cd catch-me-up
 ```
 
@@ -37,9 +37,9 @@ pip install -r requirements.txt
 4. Pull a model:
 ```bash
 # Pull a model (choose based on your system):
-ollama pull llama3.2:1b      # Recommended (1.3GB, 3GB RAM)
-ollama pull tinyllama:1.1b   # Fastest (637MB, 2GB RAM)
-ollama pull qwen2.5:0.5b     # Smallest (397MB, 2GB RAM)
+ollama pull llama3.2:1b      
+ollama pull tinyllama:1.1b   
+ollama pull qwen2.5:0.5b     
 ```
 
 ## Usage
@@ -82,7 +82,7 @@ options:
                         Number of pages to retrieve for each query (default: 5)
 ```
 
-## Interactive Menu
+## Menu
 
 Once started, you'll see an interactive menu:
 
@@ -98,7 +98,7 @@ Once started, you'll see an interactive menu:
 1. **Processing**: The EPUB is parsed into semantic pages (paragraphs) with metadata (chapter, section, position)
 2. **Indexing**: Pages are embedded and stored in a ChromaDB vector database
 3. **Querying**: 
-   - Your question is embedded
+   - Question is embedded
    - Most relevant pages are retrieved via similarity search
    - Context is passed to the LLM
    - LLM generates an answer based only on the retrieved context
