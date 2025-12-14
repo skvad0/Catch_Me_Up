@@ -22,7 +22,7 @@ tempCodeRunnerFile.py
 
 # Project specific
 *.epub
-*_chunks.jsonl
+*_pages.jsonl
 chroma_db/
 *.db
 

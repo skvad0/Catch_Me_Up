@@ -7,7 +7,7 @@ from llama_index.embeddings.ollama import OllamaEmbedding
 from llama_index.llms.ollama import Ollama
 
 
-def initialize_components(collection_name="book_chunks", persist_directory="./chroma_db"):
+def initialize_components(collection_name="book_pages", persist_directory="./chroma_db"):
     """
     Initialize Vector DB (ChromaDB), Embedding Model, and LLM.
     Returns the chroma collection and configured settings.
@@ -45,20 +45,20 @@ def create_storage_context_and_index(chroma_collection):
     return storage_context, index
 
 
-def load_chunks_from_jsonl(jsonl_file):
+def load_pages_from_jsonl(jsonl_file):
     """
-    Load chunks from JSONL file and convert them to LlamaIndex Nodes.
+    Load pages from JSONL file and convert them to LlamaIndex Nodes.
     """
     nodes = []
     
     with open(jsonl_file, 'r', encoding='utf-8') as f:
         for line in f:
-            chunk = json.loads(line)
+            page = json.loads(line)
             
             node = TextNode(
-                text=chunk['text'],
-                metadata=chunk['metadata'],
-                id_=str(chunk['id'])
+                text=page['text'],
+                metadata=page['metadata'],
+                id_=str(page['id'])
             )
             
             nodes.append(node)
